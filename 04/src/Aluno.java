@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by ramon on 22/08/16.
  */
@@ -13,5 +15,17 @@ public class Aluno {
     public String nome;
     public String CPF;
     public String nasc;
+
+    public void ler(){
+        Scanner tc = new Scanner(System.in);
+        System.out.println("Digite nome:");
+        this.nome=tc.next();
+        System.out.println("Digite CPF:");
+        this.CPF=tc.next();
+        System.out.println("Digite nascimento:");
+        this.nasc=tc.next();
+
+
+    }
 
 }

@@ -11,17 +11,15 @@ public class TestaAluno {
         Aluno objA = new Aluno();
         Aluno objB = new Aluno();
 
-        objA.nome = "Ramon";
-        objA.CPF = "00659422050";
-        objA.nasc="16/08/1984";
-        objB.nome = "Ramon 2";
-        objB.CPF = "00659422050";
-        objB.nasc="16/08/1984";
+        objA.ler();
+        objB.ler();
+
 
 
         System.out.println("Nome:"+ objA.nome);
         System.out.println("CPF:"+ objA.CPF);
         System.out.println("Data Nascimento:"+ objA.nasc);
+
         System.out.println("Nome:"+ objB.nome);
         System.out.println("CPF:"+ objB.CPF);
         System.out.println("Data Nascimento:"+ objB.nasc);
