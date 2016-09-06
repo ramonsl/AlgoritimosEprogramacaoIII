@@ -12,6 +12,8 @@ public class Main {
 
         do{
             System.out.println("1- Add um funcionario");
+            System.out.println("2- Listar um funcionario");
+            System.out.println("3- Remover um funcionario");
             op=tc.nextInt();
             switch (op){
                 case 1:{
@@ -24,6 +26,10 @@ public class Main {
                     Funcionario.listar(vetor,cont);
                     break;
 
+                }
+                case 3:{
+                    Funcionario f = new Funcionario();
+                    f.remover()
                 }
 
             }
