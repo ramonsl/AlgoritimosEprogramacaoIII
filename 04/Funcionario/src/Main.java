@@ -29,7 +29,7 @@ public class Main {
                 }
                 case 3:{
                     Funcionario f = new Funcionario();
-                    f.remover()
+                    f.remover();
                 }
 
             }
