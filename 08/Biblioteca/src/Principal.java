@@ -6,6 +6,7 @@ public class Principal {
     public static void main(String[] args) {
     int op=0;
         Biblioteca minhaBiblioteca = new Biblioteca();
+        minhaBiblioteca.add();
         do{
             ///menu maroto
 
