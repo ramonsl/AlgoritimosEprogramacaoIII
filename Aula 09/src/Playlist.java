@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,9 +17,21 @@ public class Playlist {
         if (minhasMusicas.isEmpty()){
             System.out.println("Opa não temos musicas cadastrada, Cadastre uma");
         }else{
-            minhasMusicas.get(p).mostrar();
-            p++;
+                if (p < minhasMusicas.size()){
+                    minhasMusicas.get(p).mostrar();
+                    p++;
+                }else{
+                    System.out.println("Não há mais musicas");
+                    p=0;
+                }
         }
+
+    }
+
+    public void random(){
+        Random r = new Random();
+        p= r.nextInt(minhasMusicas.size());
+
     }
 
     public void add(Musica m){
@@ -71,6 +84,26 @@ public class Playlist {
 
         }
     }
-
+/*
+* Outros métodos que são imporntantes estudar no arrayList
+* Add(E)
+* Add(int i, E )
+* remove(E)
+* remove(int i)
+* get(int i)
+* indexOf(int i)
+* contains(Obj)
+* isEmpty
+* size
+* Classe String...
+*https://docs.oracle.com/javase/8/docs/api/
+*
+* Conteudos a estudar
+* Classes
+* Atributos
+* Metodos
+* ArrayList
+*
+* */
 
 }
