@@ -54,15 +54,9 @@ public class Playlist {
         }
     }
 
-    public Musica remover(){
-       // String titulo = new String(); nao funciona
-        Scanner tc = new Scanner(System.in);
-        Musica busca = new Musica();
-        System.out.println("Digite o titulo da musica");
-        busca.titulo = tc.next();
+    public Musica remover(Musica busca ){
         int posicao=minhasMusicas.indexOf(busca);
         if (posicao>=0){
-
             System.out.println("Removido");
             return minhasMusicas.remove(posicao);
         }else{
@@ -70,6 +64,9 @@ public class Playlist {
             return null;
         }
      }
+
+
+
     public void removerPelaMusica(){
         // String titulo = new String(); nao funciona
         Scanner tc = new Scanner(System.in);
