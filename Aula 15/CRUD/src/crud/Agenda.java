@@ -39,6 +39,7 @@ public class Agenda extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTxtErroNome = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,32 +71,40 @@ public class Agenda extends javax.swing.JFrame {
 
         jLabel3.setText("Email do Cliente");
 
+        jButton1.setText("Testar Conexao");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(JBtnSalvar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTxtNome)
-                            .addComponent(jTxtFone)
-                            .addComponent(jTxtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
-                        .addGap(32, 32, 32)
-                        .addComponent(jTxtErroNome)))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTxtNome)
+                    .addComponent(jTxtFone)
+                    .addComponent(jTxtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jTxtErroNome)
                 .addContainerGap(209, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(JBtnSalvar)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(27, 27, 27)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,6 +128,10 @@ public class Agenda extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addGap(16, 16, 16))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         pack();
@@ -130,8 +143,10 @@ public class Agenda extends javax.swing.JFrame {
 
     private void JBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnSalvarActionPerformed
         // TODO add your handling code here
-        String msg= jTxtNome.getText();
-        JOptionPane.showMessageDialog(rootPane, msg);
+       
+        Cliente c = new Cliente(jTxtNome.getText(), jTxtFone.getText(), jTxtEmail.getText());
+        
+        c.mostrar();
         //JOptionPane.showConfirmDialog(rootPane, msg);
        // JOptionPane.showInputDialog("Digite Algo");
         
@@ -146,6 +161,12 @@ public class Agenda extends javax.swing.JFrame {
             jTxtErroNome.setText("");
         }
     }//GEN-LAST:event_jTxtNomeKeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        BDados bd= new BDados();
+        bd.criarBanco();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +205,7 @@ public class Agenda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBtnSalvar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
