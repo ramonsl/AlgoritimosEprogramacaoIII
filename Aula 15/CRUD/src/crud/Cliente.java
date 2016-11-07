@@ -1,5 +1,8 @@
 package crud;
 
+import java.sql.DriverManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -29,6 +32,26 @@ public class Cliente {
         String msg ="Nome:" +this.nome+ "\n Fone:"+ this.fone+"\n Email "+ this.email;
       
         JOptionPane.showMessageDialog(null, msg);
+    }
+    
+    public void insert(){
+        
+        try {
+            BDados bd = new BDados();
+            bd.getConnetion();
+           bd.stmp = bd.c.createStatement();
+           String sql = "INSERT INTO CLIENTE (NOME, FONE, EMAIL)"
+                    + "VALUES('"+this.nome+"','"+this.fone+"','"+this.email+"')";
+            System.out.println(sql);
+            bd.stmp.executeUpdate(sql);
+            bd.stmp.close();
+   
+          JOptionPane.showMessageDialog(null, this.toString());
+            
+        } catch (Exception ex) {
+            Logger.getLogger(BDados.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }

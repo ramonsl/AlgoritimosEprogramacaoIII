@@ -145,7 +145,7 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here
        
         Cliente c = new Cliente(jTxtNome.getText(), jTxtFone.getText(), jTxtEmail.getText());
-        
+        c.insert();
         c.mostrar();
         //JOptionPane.showConfirmDialog(rootPane, msg);
        // JOptionPane.showInputDialog("Digite Algo");
