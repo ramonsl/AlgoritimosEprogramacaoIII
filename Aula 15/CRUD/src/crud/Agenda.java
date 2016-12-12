@@ -147,6 +147,8 @@ public class Agenda extends javax.swing.JFrame {
         Cliente c = new Cliente(jTxtNome.getText(), jTxtFone.getText(), jTxtEmail.getText());
         c.insert();
         c.mostrar();
+        // http://sqlitebrowser.org
+        
         //JOptionPane.showConfirmDialog(rootPane, msg);
        // JOptionPane.showInputDialog("Digite Algo");
         
